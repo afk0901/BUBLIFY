@@ -1,6 +1,6 @@
 import React from 'react';
 import NavigationBar from './Navbar/Navbar';
-import About from './About';
+import About from './About/About';
 
 import {Switch, Route} from 'react-router-dom';
 

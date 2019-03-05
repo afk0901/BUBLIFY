@@ -4,7 +4,8 @@ import { NavLink } from 'react-router-dom';
 const NavLinks = () => {
     return (
         <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
+             
+            <li className="navbar-brand">
                 <NavLink exact to="/"  className="nav-link">Frontpage</NavLink>
             </li>
             
