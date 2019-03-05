@@ -1,1 +1,8 @@
 /* You can add styles here */
+.nav {
+    display: inline-block;
+}
+
+.nav-item {
+    color: red;
+}
