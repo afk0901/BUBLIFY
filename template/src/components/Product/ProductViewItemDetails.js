@@ -19,6 +19,23 @@ class ProductViewItemDetails extends React.Component{
             bubbleProducts: {}
         };
     }
+    addToCart(props){
+        
+        var item = props;
+        if(localStorage.getItem('products') == null) {
+            var list = [];
+            list.push(item);
+            localStorage.setItem('products', JSON.stringify(list))
+        }else {
+            var list = JSON.parse(localStorage.getItem('products'));
+            list.push(props);
+            localStorage.setItem('products', JSON.stringify(list));
+        
+        
+        }
+        console.log(" added to cart dicks");
+    }
+     
 
     render () {
         console.log(this.state.bubbleProducts.name);
@@ -26,8 +43,8 @@ class ProductViewItemDetails extends React.Component{
         <div> <h1>Details!</h1>
             <div className="card text-black bg-secondary mb-3">
                 <div className="card-header">{ this.state.bubbleProducts.name }
-                    <Link to={"/bubbles"}><i className="fa fa-arrow-left" data-toggle="tooltip" title="Back to products"></i></Link>
-                    <i className="fa fa-cart-plus" data-toggle="tooltip" title="Add to cart" ></i>
+                    <Link to={"/bubbles"}><button className="fa fa-arrow-left" data-toggle="tooltip" title="Back to products"></button></Link>
+                    <button className="fa fa-cart-plus" data-toggle="tooltip" title="Add to cart" onClick={() => this.addToCart(this.state.bubbleProducts)}></button>
                 </div>
                 <div className="card-body">
                     <img src = {this.state.bubbleProducts.image} className="card-image"></img>
@@ -44,6 +61,7 @@ class ProductViewItemDetails extends React.Component{
         )
     }
 }
-    
+
 
 export default ProductViewItemDetails;
+// module.exports = addToCart();

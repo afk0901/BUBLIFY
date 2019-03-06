@@ -27,11 +27,12 @@
     color: black;
 }
 .card-header {
+    text-align: center;
     color: black;
 }
 .fa-arrow-left{
     float: left;
-    padding-inline-end: 50px;
+    /* margin-inline-end: 50px; */
 }
 .fa-info{
     float: right;
