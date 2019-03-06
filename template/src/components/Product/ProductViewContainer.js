@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductView from './ProductView';
+import ProductView from '../ListView/ListView';
 
 class ProductViewContainer extends React.Component {
     componentDidMount() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ProductViewItemDetails from './ProductViewItemDetails'
+import ProductViewItemDetails from '../Product/ProductViewItemDetails'
 
 const ProductViewItem = props => {
     const { id, name, price, image } = props;
