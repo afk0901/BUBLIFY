@@ -3,9 +3,23 @@
     display: inline-block;
 }
 
-.nav-item {
-    color: red;
+.nav-link {
+    font-size: 20px;
+    font-family: 'Bernard MT';
 }
+
+.logo {
+    background-image: url("/images/bubblifylogo.png");
+    background-size: 200px 100px;
+    background-repeat: no-repeat;
+    height:100px;
+}
+
+.jumpatron {
+    height:100px;
+    background-color:rgb(50, 221, 25);
+}
+
 .card-title{
     color: black;
 }
