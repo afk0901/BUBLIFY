@@ -29,3 +29,14 @@
 .card-header {
     color: black;
 }
+.fa-arrow-left{
+    float: left;
+    padding-inline-end: 50px;
+}
+.fa-info{
+    float: right;
+}
+.fa-cart-plus {
+    float: right;
+    padding-inline-end: 10px;
+}

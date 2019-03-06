@@ -4,6 +4,7 @@ import NavigationBar from './Navbar/Navbar';
 import About from './About/About';
 import Bundles from './Bundles/Bundles'
 import ProductViewContainer from './Product/ProductViewContainer';
+import ProductViewItemDetail from './Product/ProductViewItemDetails';
 
 
 import {Switch, Route} from 'react-router-dom';
@@ -18,6 +19,8 @@ const App = () => {
                 <Route exact path="/about" component={ About }/>
                 <Route exact path="/bundles" component={ Bundles } />
                 <Route exact path="/bubbles" component={ ProductViewContainer }/>
+                <Route exact path="/bubbles/:id" component={ ProductViewItemDetail }/>
+
             </Switch>
         </div>
     </div>
