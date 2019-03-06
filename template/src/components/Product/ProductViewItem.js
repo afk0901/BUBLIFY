@@ -9,7 +9,7 @@ const ProductViewItem = props => {
         <div className="card text-white bg-secondary mb-3">
             <div className="card-header">{ name }<i className="fa fa-cart-plus" style={{ float: 'right' }} ></i></div>
             <div className="card-body">
-    <img src = {image} className="card-image" onClick={() => <ProductViewItemDetails data = { id } />}onClick={() => console.log("Test") }></img>
+    <img src = {image} className="card-image" onClick={() =><ProductViewItemDetails data = { id } />}></img>
                 <h4 className="card-title">Price</h4>
                 <div className="card-text">
                     <div>{price}<span> ISK</span></div>
