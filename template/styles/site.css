@@ -19,3 +19,13 @@
     height:100px;
     background-color:rgb(50, 221, 25);
 }
+
+.card-title{
+    color: black;
+}
+.card-text{
+    color: black;
+}
+.card-header {
+    color: black;
+}
