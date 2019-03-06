@@ -26,8 +26,8 @@ class ProductViewItemDetails extends React.Component{
         <div> <h1>Details!</h1>
             <div className="card text-black bg-secondary mb-3">
                 <div className="card-header">{ this.state.bubbleProducts.name }
-                    <Link to={"/bubbles"}><i className="fa fa-arrow-left" ></i></Link>
-                    <i className="fa fa-cart-plus" ></i>
+                    <Link to={"/bubbles"}><i className="fa fa-arrow-left" data-toggle="tooltip" title="Back to products"></i></Link>
+                    <i className="fa fa-cart-plus" data-toggle="tooltip" title="Add to cart" ></i>
                 </div>
                 <div className="card-body">
                     <img src = {this.state.bubbleProducts.image} className="card-image"></img>

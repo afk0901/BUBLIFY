@@ -5,6 +5,7 @@ import About from './About/About';
 import Bundles from './Bundles/Bundles'
 import ProductViewContainer from './Product/ProductViewContainer';
 import ProductViewItemDetail from './Product/ProductViewItemDetails';
+import CartView from './Cart/CartView';
 
 
 import {Switch, Route} from 'react-router-dom';
@@ -20,6 +21,7 @@ const App = () => {
                 <Route exact path="/bundles" component={ Bundles } />
                 <Route exact path="/bubbles" component={ ProductViewContainer }/>
                 <Route exact path="/bubbles/:id" component={ ProductViewItemDetail }/>
+                <Route exact path="/cart" component ={CartView} />
 
             </Switch>
         </div>

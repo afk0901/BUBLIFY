@@ -9,8 +9,8 @@ const ViewItem = props => {
     return (
         <div className="card text-white bg-secondary mb-3">
             <div className="card-header">{ name }
-                <Link to={"/bubbles/" + id}><i className="fa fa-info" ></i></Link>
-                <i className="fa fa-cart-plus" ></i>
+                <Link to={"/bubbles/" + id}><i className="fa fa-info" data-toggle="tooltip" title="Product Details" ></i></Link>
+                <i className="fa fa-cart-plus"data-toggle="tooltip" title="Add to cart!" ></i>
             </div>
             <div className="card-body">
              <img src = {image} className="card-image"></img>

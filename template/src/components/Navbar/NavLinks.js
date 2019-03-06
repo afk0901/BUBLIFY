@@ -22,7 +22,7 @@ const NavLinks = () => {
             </li>
 
             <li className="nav-item">
-                 <NavLink exact to="/Cart" className="nav-link"><i className="fas fa-shopping-cart"></i></NavLink>
+                 <NavLink exact to="/cart" className="nav-link"><i className="fas fa-shopping-cart" data-toggle="tooltip" title="View cart"></i></NavLink>
             </li>
         </ul>
     )
