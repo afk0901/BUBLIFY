@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class ProductViewItemDetails extends React.Component{
     
@@ -10,7 +11,6 @@ class ProductViewItemDetails extends React.Component{
         }).then(data => {
             const bubbleProducts = data.map(d => {return {id: d.id, name: d.name, price: d.price, image: d.image, description: d.description, count: 0}}).find((item) => item.id == this.props.match.params.id);
             this.setState({ bubbleProducts });
-            // console.log(bubbleProducts);
         });
     }
     constructor() {
@@ -36,7 +36,6 @@ class ProductViewItemDetails extends React.Component{
                 
            
         }
-            
         console.log(" added to cart", list);
     }
      
@@ -67,5 +66,17 @@ class ProductViewItemDetails extends React.Component{
     }
 }
 
-
+/*
+    This property stores the product details
+    name - The name of the product
+    price - The price of the product
+    image - The image source string
+    description - The description of the product
+*/
+ProductViewItemDetails.propTypes = {
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+    description: propTypes.string.isRequired
+}
 export default ProductViewItemDetails;

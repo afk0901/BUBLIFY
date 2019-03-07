@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom;'
 import ProductViewItemDetails from './ProductViewItemDetails'
 
 const ProductViewItem = props => {
-    const { id, name, price, image } = props;
-    console.log("This is the data passed on ", name)
+    const {name, price, image } = props;
+    
     return (
         <div className="card text-white bg-secondary mb-3">
             <div className="card-header">{ name }<i className="fa fa-cart-plus" style={{ float: 'right' }} ></i></div>
@@ -19,8 +19,13 @@ const ProductViewItem = props => {
         </div>
     )
 }
+/* 
+Makes it available to see the product.
+    name - The product name
+    price - The product price
+    image - The product image string
+*/
 ProductViewItem.propTypes = {
-    id: PropTypes.oneOfType([ PropTypes.string, PropTypes.number]).isRequired,
     name: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired

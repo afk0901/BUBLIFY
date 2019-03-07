@@ -30,6 +30,14 @@ const Input = props => {
 
 export default Input;
 
+/*
+    value - the value from the input
+    htmlid - id on the input itself
+    oninput - runs a function when the input changes
+    type - allowed types of inputs
+    errorMessage - This property holds a error string if the input is invalid
+    label - the input label
+ */
 Input.propTypes = {
     value: PropTypes.string.isRequired,
     htmlid: PropTypes.string,

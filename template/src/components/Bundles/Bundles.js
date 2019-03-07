@@ -4,6 +4,7 @@ import BundleListView from '../ListView/BundleViewItemList'
 class Bundles extends React.Component {
     
     componentDidMount() {
+        //Fetching bundles objects
         fetch('http://localhost:3600/api/bundles').then(resp => {
             if(resp.ok) {
                 return resp.json();
@@ -22,7 +23,6 @@ class Bundles extends React.Component {
     }
 
     render () {
-        //console.log(this.state.bundles);
         return (
         <div>
             <h1>Bundles!</h1>

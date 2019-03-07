@@ -40,8 +40,15 @@ const ViewItem = (props) => {
 
 }
 
+/* 
+    Makes it available to add the product to the cart.
+    id - The product id
+    name - The product name
+    price - The product price
+    image - The product image url
+*/
 ViewItem.propTypes = {
-    id: PropTypes.oneOfType([ PropTypes.string, PropTypes.number]).isRequired,
+    id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired

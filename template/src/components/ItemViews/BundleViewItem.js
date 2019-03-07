@@ -16,9 +16,11 @@ const BundleViewItem = props => {
             </div>
     );
 };
-
+/*
+    items - Array of product id's so that it's known what product should be in one boundle
+    name - The name of the boundle. 
+*/
 BundleViewItem.proptypes = {
-    id: proptypes.number.isRequired,
     items: proptypes.number.isRequired,
     name: proptypes.string.isRequired
 }

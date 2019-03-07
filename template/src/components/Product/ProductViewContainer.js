@@ -1,5 +1,5 @@
 import React from 'react';
-import ListView from '../ListView/ListView';
+import ListView from '../ListView/ProductListView';
 import {Link} from 'react-router-dom';
 
 class ProductViewContainer extends React.Component {

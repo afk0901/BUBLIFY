@@ -7,8 +7,13 @@ const CartViewHandler = props => {
     return list.map(item => <CartViewItem key={item.id} {...item} />);
 };
 
+/*
+    This array contains the products from the localstorage.
+ */
 CartViewHandler.propTypes = {
     list: PropTypes.array.isRequired
 };
 
 export default CartViewHandler;
+
+

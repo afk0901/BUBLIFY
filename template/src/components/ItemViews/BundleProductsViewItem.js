@@ -17,10 +17,9 @@ class BundleProductViewItem extends React.Component {
                     productArr.push(this.state.bubbleProducts[i]);
                 }
             }
-
             const productsAndImages = productArr;
             this.setState({ productsAndImages });
-
+            
         });
     }
 
@@ -33,6 +32,7 @@ class BundleProductViewItem extends React.Component {
     }
 
     render() {
+       
         return (
             <div>
                 {this.state.productsAndImages.map(p =>
@@ -44,4 +44,11 @@ class BundleProductViewItem extends React.Component {
         );
     }
 };
+/*Getting items id's from this.props.bundle
+  so that's possible to find the correct items.
+*/
+BundleProductViewItem.proptypes = {
+    items: proptypes.number.isRequired
+}
+
 export default BundleProductViewItem;
