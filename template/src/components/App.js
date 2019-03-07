@@ -11,8 +11,8 @@ import StorePickup from './Checkout/StorePickupForm';
 import FrontPage from './FrontPage/FrontPage'
 import DeliveryForm from './Checkout/DeliveryForm';
 import Confirmation from './Checkout/Confirmation';
+import OrderComplete from './Checkout/OrderComplete';
 import {Switch, Route} from 'react-router-dom';
-import Confirm from './Checkout/Confirmation';
 
 
 const App = () => {
@@ -32,6 +32,8 @@ const App = () => {
                 <Route exact path="/cart/checkout/delivery" component ={DeliveryForm} />
                 <Route exact path="/cart/checkout/confirm" component ={Confirmation} />
                 <Route exact path="/bubbles/:id" component={ ProductViewItemDetail }/>
+                <Route exact path="/cart/checkout/complete" component ={OrderComplete} />
+                
 
                 
 
