@@ -2,12 +2,14 @@ import React from 'react';
 import Form from '../Forms/Form';
 import Input from '../Forms/Input';
 import {Link} from 'react-router-dom';
+import { Redirect } from'react-router';
 
 
 class DeliveryForm extends React.Component {
     constructor(props) {
         super();
         this.state = {
+            redirect: false,
             fields: {
                 name: '',
                 address: '',
@@ -47,9 +49,19 @@ class DeliveryForm extends React.Component {
         return true;
         console.log(errors);
     }
+
+    storeUser(){
+        const products = JSON.parse(localStorage.getItem('products'));
+        console.log(products);
+        const userData = { products: products, name: this.state.fields.name, address: this.state.fields.address, postalCode: this.state.fields.postalCode, city: this.state.fields.city, telephone: this.state.fields.telephone };
+        console.log(userData, "the userData ");
+        localStorage.setItem("user",JSON.stringify(userData));
+    }
     submitForm(e) {
         e.preventDefault();
         if(this.validateForm()) {
+            this.storeUser();
+            this.setState({redirect: true});
             console.log("Success!!", "success yay");
         }
         else {
@@ -57,6 +69,10 @@ class DeliveryForm extends React.Component {
         }
     }
     render(){
+        if (this.state.redirect) {
+            return <Redirect push to="/cart/checkout/confirm" />;
+          }
+
         const { name, address, postalCode, city, telephone } = this.state.fields;
         const { nameError, addressError, postalCodeError, cityError, telephoneError} = this.state.errors;
         console.log(name)

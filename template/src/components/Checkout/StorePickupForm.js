@@ -30,6 +30,8 @@ class StorePickup extends React.Component {
         const errors = {};
         if(name === '' ) {errors.nameError = "You must enter your name"}
         if(telephone === '' ) {errors.telephoneError = "You must enter your telephone"}
+        if(telephone.length !== 7) {errors.telephoneError = "Telephone number must be 7 digits"}
+        // if(typeof telephone !== "number" ) {errors.telephoneError = "Telephone numbers must be only integers"}
         
         if (Object.keys(errors).length > 0) { 
             this.setState({ ...this.state.errors, errors });
@@ -53,10 +55,12 @@ class StorePickup extends React.Component {
     }
 
     storeUser(){
-        const userData = {name: this.state.fields.name, telephone: this.state.fields.telephone };
+        const products = JSON.parse(localStorage.getItem('products'));
+        const userData = {name: this.state.fields.name, telephone: this.state.fields.telephone, products: products };
         console.log(userData, "the userData ");
         localStorage.setItem("user",JSON.stringify(userData));
     }
+
 
     render(){
         if (this.state.redirect) {
