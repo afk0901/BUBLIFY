@@ -39,6 +39,8 @@ class DeliveryForm extends React.Component {
         if(postalCode === '' ) {errors.postalCodeError = "You must enter your postal code"}
         if(city === '' ) {errors.cityError = "You must enter your city"}
         if(telephone === '' ) {errors.telephoneError = "You must enter your telephone"}
+        if(telephone.length !== 7) {errors.telephoneError = "Telephone number must be 7 digits"}
+
         
         if (Object.keys(errors).length > 0) { 
             this.setState({ ...this.state.errors, errors });

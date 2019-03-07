@@ -11,10 +11,6 @@ class Confirmation extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     };
-
-    
-
-
     handleSubmit() {
         if(JSON.parse(localStorage.getItem('products')) == null) {
             console.log("penis")
