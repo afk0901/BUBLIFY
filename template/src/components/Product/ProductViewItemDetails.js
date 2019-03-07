@@ -8,9 +8,9 @@ class ProductViewItemDetails extends React.Component{
             if(resp.ok) { return resp.json(); } 
             
         }).then(data => {
-            const bubbleProducts = data.map(d => {return {id: d.id, name: d.name, price: d.price, image: d.image, description: d.description}}).find((item) => item.id == this.props.match.params.id);
+            const bubbleProducts = data.map(d => {return {id: d.id, name: d.name, price: d.price, image: d.image, description: d.description, count: 0}}).find((item) => item.id == this.props.match.params.id);
             this.setState({ bubbleProducts });
-            console.log(bubbleProducts);
+            // console.log(bubbleProducts);
         });
     }
     constructor() {
@@ -24,21 +24,25 @@ class ProductViewItemDetails extends React.Component{
         var item = props;
         if(localStorage.getItem('products') == null) {
             var list = [];
+            item.count = 1;
+            console.log("Pushing into empty array");
             list.push(item);
             localStorage.setItem('products', JSON.stringify(list))
         }else {
             var list = JSON.parse(localStorage.getItem('products'));
-            list.push(props);
-            localStorage.setItem('products', JSON.stringify(list));
-        
-        
+           
+                    list.push(item);
+                    localStorage.setItem('products', JSON.stringify(list));
+                
+           
         }
-        console.log(" added to cart dicks");
+            
+        console.log(" added to cart", list);
     }
      
 
     render () {
-        console.log(this.state.bubbleProducts.name);
+        // console.log(this.state.bubbleProducts.name);
         return (
         <div> <h1>Details!</h1>
             <div className="card text-black bg-secondary mb-3">
@@ -64,4 +68,3 @@ class ProductViewItemDetails extends React.Component{
 
 
 export default ProductViewItemDetails;
-// module.exports = addToCart();

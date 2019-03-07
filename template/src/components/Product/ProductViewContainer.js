@@ -6,7 +6,7 @@ class ProductViewContainer extends React.Component {
         fetch('http://localhost:3600/api/bubbles').then(resp => {
             if(resp.ok) { return resp.json(); } 
         }).then(data => {
-            const bubbleProducts = data.map(d => {return {id: d.id, name: d.name, price: d.price, image: d.image, description: d.description}});
+            const bubbleProducts = data.map(d => {return {id: d.id, name: d.name, price: d.price, image: d.image, description: d.description, count: 0}});
             this.setState({ bubbleProducts });
             console.log(this.state);
         });
