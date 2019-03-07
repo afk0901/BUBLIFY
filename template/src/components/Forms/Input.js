@@ -17,10 +17,10 @@ const Input = props => {
         <></>
         <input 
             className="form-control"
-            onInput={ onInput }
+            onChange={ onInput }
             value={ value }
             name={ name }
-            htmlid={ htmlid }
+            id={ htmlid }
             type={ type } />
         <span className="error"> { errorMessage } </span>
     </div>

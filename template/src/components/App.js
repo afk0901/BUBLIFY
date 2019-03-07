@@ -9,8 +9,10 @@ import CartView from './Cart/CartView';
 import Checkout from './Checkout/Checkout';
 import StorePickup from './Checkout/StorePickupForm';
 import FrontPage from './FrontPage/FrontPage'
-
+import DeliveryForm from './Checkout/DeliveryForm';
+import Confirmation from './Checkout/Confirmation';
 import {Switch, Route} from 'react-router-dom';
+import Confirm from './Checkout/Confirmation';
 
 
 const App = () => {
@@ -27,7 +29,10 @@ const App = () => {
                 <Route exact path="/cart" component ={CartView} />
                 <Route exact path="/cart/checkout" component ={Checkout} />
                 <Route exact path="/cart/checkout/storepickup" component ={StorePickup} />
+                <Route exact path="/cart/checkout/delivery" component ={DeliveryForm} />
+                <Route exact path="/cart/checkout/confirm" component ={Confirmation} />
                 <Route exact path="/bubbles/:id" component={ ProductViewItemDetail }/>
+
                 
 
             </Switch>
