@@ -41,6 +41,8 @@ class StorePickup extends React.Component {
                         type="tel"
                         name="telephone"
                         value={telephone}
+                        htmlid="telephone"
+                        label="Enter your telephone"
                         onInput={e => this.onInputchange(e)}
                          />
                 </Form>
