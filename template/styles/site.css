@@ -48,3 +48,7 @@
 .button-span {
     margin-inline-start: 20px;
 }
+
+.error{
+    color: red;
+}

@@ -2,20 +2,24 @@ import React from 'react';
 import Form from '../Forms/Form';
 import Input from '../Forms/Input';
 import {Link} from 'react-router-dom';
-import { Redirect } from'react-router';
 
 
-class StorePickup extends React.Component {
+class DeliveryForm extends React.Component {
     constructor(props) {
         super();
         this.state = {
-            redirect: false,
             fields: {
                 name: '',
+                address: '',
+                postalCode: '',
+                city: '',
                 telephone: ''  
             },
             errors: {
                 nameError: '',
+                addressError: '',
+                postalCodeError:'',
+                cityError: '',
                 telephoneError: ''
             }
         }
@@ -24,11 +28,14 @@ class StorePickup extends React.Component {
         this.setState({
             fields: { ...this.state.fields, [e.target.name]: e.target.value}
         });
-    }
+    };
     validateForm(){
-        const { name, telephone } = this.state.fields;
+        const { name, address, postalCode, city, telephone } = this.state.fields;
         const errors = {};
         if(name === '' ) {errors.nameError = "You must enter your name"}
+        if(address === '' ) {errors.addressError = "You must enter your address"}
+        if(postalCode === '' ) {errors.postalCodeError = "You must enter your postal code"}
+        if(city === '' ) {errors.cityError = "You must enter your city"}
         if(telephone === '' ) {errors.telephoneError = "You must enter your telephone"}
         
         if (Object.keys(errors).length > 0) { 
@@ -43,29 +50,19 @@ class StorePickup extends React.Component {
     submitForm(e) {
         e.preventDefault();
         if(this.validateForm()) {
-            this.storeUser();
-            this.setState({redirect: true})
             console.log("Success!!", "success yay");
         }
         else {
             console.log("Failure!!", "failed");
         }
     }
-
-    storeUser(){
-        const userData = {name: this.state.fields.name, telephone: this.state.fields.telephone };
-        console.log(userData, "the userData ");
-        localStorage.setItem("user",JSON.stringify(userData));
-    }
-
     render(){
-        if (this.state.redirect) {
-            return <Redirect push to="/cart/checkout/confirm" />;
-          }
-
-        const { name, telephone } = this.state.fields;
-        const { nameError, telephoneError} = this.state.errors;
+        const { name, address, postalCode, city, telephone } = this.state.fields;
+        const { nameError, addressError, postalCodeError, cityError, telephoneError} = this.state.errors;
         console.log(name)
+        console.log(address)
+        console.log(postalCode)
+        console.log(city)
         console.log(telephone)
         return (
             <>
@@ -77,7 +74,31 @@ class StorePickup extends React.Component {
                         value={name}
                         htmlid="name"
                         label="Enter your name"
-                        errorMessage= {nameError}
+                        errorMessage={nameError}
+                        onInput={e => this.onInputchange(e)} />
+                    <Input 
+                        type="text"
+                        name="address"
+                        value={address}
+                        htmlid="address"
+                        label="Enter your address"
+                        errorMessage={addressError}
+                        onInput={e => this.onInputchange(e)} />
+                    <Input 
+                        type="text"
+                        name="postalCode"
+                        value={postalCode}
+                        htmlid="postalCode"
+                        label="Enter your postal code"
+                        errorMessage={postalCodeError}
+                        onInput={e => this.onInputchange(e)} />
+                    <Input 
+                        type="text"
+                        name="city"
+                        value={city}
+                        htmlid="city"
+                        label="Enter your city"
+                        errorMessage={cityError}
                         onInput={e => this.onInputchange(e)} />
                     <Input 
                         type="tel"
@@ -85,9 +106,8 @@ class StorePickup extends React.Component {
                         value={telephone}
                         htmlid="telephone"
                         label="Enter your telephone"
-                        errorMessage= {telephoneError}
-                        onInput={e => this.onInputchange(e)}
-                         />
+                        errorMessage={telephoneError}
+                        onInput={e => this.onInputchange(e)}/>
                     <input type="submit" value="Continue" className="btn btn-primary" style={{ float: 'left', marginTop: 10,}} />
                     <Link to="/"><button className="btn btn-danger" style={{ float: 'right', marginTop: 10}}>Cancel</button></Link>
                 </Form>
@@ -97,4 +117,4 @@ class StorePickup extends React.Component {
     }
 }
 
-export default StorePickup;
+export default DeliveryForm;
