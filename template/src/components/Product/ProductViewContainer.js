@@ -1,5 +1,6 @@
 import React from 'react';
 import ListView from '../ListView/ListView';
+import {Link} from 'react-router-dom';
 
 class ProductViewContainer extends React.Component {
     componentDidMount() {
@@ -22,6 +23,8 @@ class ProductViewContainer extends React.Component {
             <>
             <div className = "container">
                 <h1>Products!</h1>
+                <Link to="/cart/checkout"><button href="#" className="btn btn-success" onClick={() => console.log("clicked")  }>Go to checkout</button></Link>
+
                 <ListView list = { this.state.bubbleProducts } />
             </div>
             </>

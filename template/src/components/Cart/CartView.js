@@ -1,5 +1,6 @@
 import React from 'react';
 import CartViewHandler from './CartViewHandler'
+import { Link } from 'react-router-dom';
 class CartView extends React.Component {
     componentDidMount() {
         const myCart = this.getCart();
@@ -30,6 +31,7 @@ class CartView extends React.Component {
         return (
             <>
             <h1>Your Cart:</h1>
+            <Link to="/cart/checkout"><button href="#" className="btn btn-success" onClick={() => console.log("clicked")  }>Go to checkout</button></Link>
             <CartViewHandler list = { this.state.cart } />
             </>
         )

@@ -13,11 +13,10 @@ const CartViewItem = props => {
                 <h5 className="card-title">{ name }</h5>
                 <p className="card-text">{description}</p>
                 <p>{price} ISK</p>
-                <a href="#" className="btn btn-danger" onClick={() => alert("CLEICKE")}>Remove</a>
             </div>
         </div>
      
-
+     
         
     ) 
 }

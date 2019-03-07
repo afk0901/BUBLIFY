@@ -45,6 +45,7 @@ class ProductViewItemDetails extends React.Component{
         // console.log(this.state.bubbleProducts.name);
         return (
         <div> <h1>Details!</h1>
+            <Link to="/cart/checkout"><button href="#" className="btn btn-success" onClick={() => console.log("clicked")  }>Go to checkout</button></Link>
             <div className="card text-black bg-secondary mb-3">
                 <div className="card-header">{ this.state.bubbleProducts.name }
                     <Link to={"/bubbles"}><button className="fa fa-arrow-left" data-toggle="tooltip" title="Back to products"></button></Link>
