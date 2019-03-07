@@ -27,11 +27,12 @@
     color: black;
 }
 .card-header {
+    text-align: center;
     color: black;
 }
 .fa-arrow-left{
     float: left;
-    padding-inline-end: 50px;
+    /* margin-inline-end: 50px; */
 }
 .fa-info{
     float: right;
@@ -39,4 +40,11 @@
 .fa-cart-plus {
     float: right;
     padding-inline-end: 10px;
+}
+.card {
+    width: 22rem;
+    margin: 0 0 0 25%;
+}
+.button-span {
+    margin-inline-start: 20px;
 }

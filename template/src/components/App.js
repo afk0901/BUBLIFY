@@ -5,9 +5,13 @@ import About from './About/About';
 import Bundles from './Bundles/Bundles'
 import ProductViewContainer from './Product/ProductViewContainer';
 import ProductViewItemDetail from './Product/ProductViewItemDetails';
+import CartView from './Cart/CartView';
+import Checkout from './Checkout/Checkout';
+import StorePickup from './Checkout/StorePickupForm';
 
 
 import {Switch, Route} from 'react-router-dom';
+
 
 const App = () => {
     return ( 
@@ -19,7 +23,11 @@ const App = () => {
                 <Route exact path="/about" component={ About }/>
                 <Route exact path="/bundles" component={ Bundles } />
                 <Route exact path="/bubbles" component={ ProductViewContainer }/>
+                <Route exact path="/cart" component ={CartView} />
+                <Route exact path="/cart/checkout" component ={Checkout} />
+                <Route exact path="/cart/checkout/storepickup" component ={StorePickup} />
                 <Route exact path="/bubbles/:id" component={ ProductViewItemDetail }/>
+                
 
             </Switch>
         </div>
