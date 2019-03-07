@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 class ProductViewItemDetails extends React.Component{
     
     componentDidMount() {
-       var newItem =  fetch('http://localhost:3600/api/bubbles').then(resp => {
+       var newItem =  fetch('http://localhost:3500/api/bubbles').then(resp => {
             if(resp.ok) { return resp.json(); } 
             
         }).then(data => {
@@ -66,17 +66,5 @@ class ProductViewItemDetails extends React.Component{
     }
 }
 
-/*
-    This property stores the product details
-    name - The name of the product
-    price - The price of the product
-    image - The image source string
-    description - The description of the product
-*/
-ProductViewItemDetails.propTypes = {
-    name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    image: PropTypes.string.isRequired,
-    description: propTypes.string.isRequired
-}
+
 export default ProductViewItemDetails;

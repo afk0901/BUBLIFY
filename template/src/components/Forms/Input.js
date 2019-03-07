@@ -28,8 +28,6 @@ const Input = props => {
 
 }
 
-export default Input;
-
 /*
     value - the value from the input
     htmlid - id on the input itself
@@ -48,3 +46,5 @@ Input.propTypes = {
     label: PropTypes.string
 
 }
+
+export default Input;

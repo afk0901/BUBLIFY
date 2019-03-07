@@ -5,7 +5,7 @@ class Bundles extends React.Component {
     
     componentDidMount() {
         //Fetching bundles objects
-        fetch('http://localhost:3600/api/bundles').then(resp => {
+        fetch('http://localhost:3500/api/bundles').then(resp => {
             if(resp.ok) {
                 return resp.json();
             }

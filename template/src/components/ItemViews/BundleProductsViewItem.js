@@ -6,10 +6,10 @@ class BundleProductViewItem extends React.Component {
 
     componentDidMount() {
         var productArr = [];
-        fetch('http://localhost:3600/api/bubbles').then(resp => {
+        fetch('http://localhost:3500/api/bubbles').then(resp => {
             if (resp.ok) { return resp.json(); }
         }).then(data => {
-            const bubbleProducts = data.map(d => { return { id: d.id, name: d.name, price: d.price, image: d.image, description: d.description } });
+            const bubbleProducts = data.map(d => { return {id: d.id, name: d.name, price: d.price, image: d.image, description: d.description } });
             this.setState({ bubbleProducts });
 
             for (var i = 0; i < this.state.bubbleProducts.length; i++) {
@@ -36,7 +36,7 @@ class BundleProductViewItem extends React.Component {
         return (
             <div>
                 {this.state.productsAndImages.map(p =>
-                    <div>{p.name}
+                    <div key={p.id}>{p.name}
                         <img src={p.image} />
                     </div>)}
             </div>

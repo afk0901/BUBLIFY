@@ -8,7 +8,7 @@ import ProductViewItemDetail from './Product/ProductViewItemDetails';
 import CartView from './Cart/CartView';
 import Checkout from './Checkout/Checkout';
 import StorePickup from './Checkout/StorePickupForm';
-
+import FrontPage from './FrontPage/FrontPage'
 
 import {Switch, Route} from 'react-router-dom';
 
@@ -20,6 +20,7 @@ const App = () => {
         <NavigationBar />
         <div className="container">
             <Switch>
+                <Route exact path="/" component={ FrontPage }/>
                 <Route exact path="/about" component={ About }/>
                 <Route exact path="/bundles" component={ Bundles } />
                 <Route exact path="/bubbles" component={ ProductViewContainer }/>

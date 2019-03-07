@@ -4,7 +4,7 @@ import BundleViewItem from '../ItemViews/BundleViewItem';
 
 const BundleListView = props => {
     const { list } = props;
-    return list.map(item => <BundleViewItem key={item.id} {...item} />);
+    return list.map(item => <BundleViewItem key={item.name} {...item} />);
 };
 
 BundleListView.propTypes = {
