@@ -1,5 +1,5 @@
 import React from 'react';
-import ListView from '../ListView/ListView';
+import ListView from '../ListView/ProductListView';
 
 class ProductViewContainer extends React.Component {
     componentDidMount() {

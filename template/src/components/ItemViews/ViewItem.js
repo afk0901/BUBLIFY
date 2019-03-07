@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, Switch, Route } from 'react-router-dom';
-import ProductViewItemDetails from '../Product/ProductViewItemDetails'
+import { Link} from 'react-router-dom';
 
 const ViewItem = props => {
-    const { id, name, price, image, description } = props;
-    console.log("This is the data passed on ", name)
+    const { id, name, price, image } = props;
     return (
         <div className="card text-white bg-secondary mb-3">
             <div className="card-header">{ name }

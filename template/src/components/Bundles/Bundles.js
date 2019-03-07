@@ -1,5 +1,5 @@
 import React from 'react';
-import BundleViewItem from './BundleViewItem'
+import BundleListView from '../ListView/BundleViewItemList'
 
 class Bundles extends React.Component {
     
@@ -22,10 +22,11 @@ class Bundles extends React.Component {
     }
 
     render () {
-        console.log(this.state.bundles);
+        //console.log(this.state.bundles);
         return (
         <div>
-            <BundleViewItem list= {this.state.bundles}/>
+            <h1>Bundles!</h1>
+            <BundleListView list= {this.state.bundles}/>
         </div>);
     }
 };
