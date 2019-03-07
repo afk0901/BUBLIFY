@@ -30,7 +30,7 @@ class Confirmation extends React.Component {
         const user = JSON.parse(localStorage.getItem("user"));
         console.log(user);
         // console.log(response);
-        fetch('http://localhost:3600/api/orders/' + user.telephone, {
+        fetch('http://localhost:3500/api/orders/' + user.telephone, {
         method: 'POST',
         // mode: 'CORS',
         body: JSON.stringify(user),
